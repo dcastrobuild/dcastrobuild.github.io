@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafael D' Castro — Currículo Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #F1F5F9;
+    --mid: #CBD5E1;
+    --muted: #94A3B8;
+    --accent: #60A5FA;
+    --accent-light: rgba(96,165,250,0.12);
+    --line: #1E3A5F;
+    --bg: #0F172A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #070E1A;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    margin: 32px auto;
+    background: var(--bg);
+    box-shadow: 0 4px 48px rgba(0,0,0,0.6);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: #060D18;
+    padding: 40px 24px;
+    color: #F1F5F9;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-right: 1px solid #1E3A5F;
+  }
+
+  .sidebar-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: #fff;
+    line-height: 1.3;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 16px;
+  }
+
+  .sidebar-title {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #60A5FA;
+    margin-top: 6px;
+  }
+
+  .sidebar-section-label {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #60A5FA;
+    margin-bottom: 10px;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+
+  .contact-label {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #475569;
+  }
+
+  .contact-value {
+    font-size: 12px;
+    color: #94A3B8;
+    word-break: break-all;
+  }
+
+  .contact-value a {
+    color: #60A5FA;
+    text-decoration: none;
+  }
+
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .skill-item {
+    font-size: 12px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .skill-item::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .soft-tag {
+    display: inline-block;
+    background: rgba(96,165,250,0.12);
+    color: #60A5FA;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    margin: 3px 3px 0 0;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  /* Resumo */
+  .resumo-text {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.7;
+  }
+
+  /* Experiência */
+  .exp-block {
+    margin-bottom: 18px;
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2px;
+  }
+
+  .exp-role {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .exp-period {
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    margin-left: 12px;
+    margin-top: 2px;
+  }
+
+  .exp-company {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .exp-description {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .exp-bullets li {
+    font-size: 12.5px;
+    color: var(--mid);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+    top: 3px;
+  }
+
+  /* Formação */
+  .edu-block {
+    margin-bottom: 14px;
+  }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .edu-course {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .edu-period {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .edu-institution {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Projetos */
+  .project-block {
+    margin-bottom: 14px;
+  }
+
+  .project-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .project-desc {
+    font-size: 12.5px;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-top: 3px;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+  }
+
+  .project-tag {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 3px;
+    padding: 1px 7px;
+  }
+
+  /* Idiomas */
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    color: var(--mid);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .lang-item:last-child { border-bottom: none; }
+  .lang-level { color: var(--accent); font-weight: 500; }
+
+  /* Print - não recomendado para versão digital */
+  @media print {
+    body { background: #070E1A; }
+    .page { margin: 0; box-shadow: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <div>
+      <div class="sidebar-name">Rafael<br>D' Castro</div>
+      <div class="sidebar-title">Desenvolvedor em Formação<br>Suporte Técnico · ADS</div>
+    </div>
+
+    <!-- Contato -->
+    <div>
+      <div class="sidebar-section-label">Contato</div>
+      <div class="contact-item">
+        <span class="contact-label">Telefone</span>
+        <span class="contact-value">(81) 9 8475-1132</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">E-mail</span>
+        <span class="contact-value">rafaeldcastro777@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value"><a href="https://www.linkedin.com/in/rafael-dcastro-full">linkedin.com/in/rafael-dcastro-full</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value"><a href="https://github.com/dcastrobuild">github.com/dcastrobuild</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Localização</span>
+        <span class="contact-value">Jaboatão dos Guararapes, PE</span>
+      </div>
+    </div>
+
+    <!-- Habilidades Técnicas -->
+    <div>
+      <div class="sidebar-section-label">Habilidades Técnicas</div>
+      <div class="skills-list">
+        <span class="skill-item">PHP · MySQL · Bootstrap</span>
+        <span class="skill-item">HTML / CSS / JavaScript</span>
+        <span class="skill-item">Java (básico)</span>
+        <span class="skill-item">Git / GitHub</span>
+        <span class="skill-item">GLPI (Gestão de TI)</span>
+        <span class="skill-item">Suporte Técnico (N1/N2)</span>
+        <span class="skill-item">Cabeamento Estruturado</span>
+        <span class="skill-item">Automação com IA</span>
+      </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div>
+      <div class="sidebar-section-label">Perfil</div>
+      <div>
+        <span class="soft-tag">Analítico</span>
+        <span class="soft-tag">Proativo</span>
+        <span class="soft-tag">Organizado</span>
+        <span class="soft-tag">Curioso</span>
+        <span class="soft-tag">Ágil</span>
+        <span class="soft-tag">Colaborativo</span>
+      </div>
+    </div>
+
+    <!-- Idiomas -->
+    <div>
+      <div class="sidebar-section-label">Idiomas</div>
+      <div class="lang-item">
+        <span>Português</span>
+        <span class="lang-level">Nativo</span>
+      </div>
+      <div class="lang-item">
+        <span>Inglês</span>
+        <span class="lang-level">Básico/Técnico</span>
+      </div>
+      <div class="lang-item">
+        <span>Espanhol</span>
+        <span class="lang-level">Básico/Técnico</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <!-- Resumo -->
+    <section>
+      <div class="section-header">
+        <span class="section-title">Sobre</span>
+        <div class="section-line"></div>
+      </div>
+      <!-- ⚠️ EDITE AQUI: adapte o resumo para cada vaga, mantendo 3–4 linhas -->
+      <p class="resumo-text">
+        Estudante de Análise e Desenvolvimento de Sistemas com experiência prática em infraestrutura e suporte técnico. Atuei como Jovem Aprendiz na Magnum Tires por 18 meses, desenvolvendo capacidade de resolução de problemas, atenção a processos e raciocínio estruturado. Tenho interesse crescente em qualidade de software, automação e desenvolvimento web, com foco em entregar soluções funcionais e bem estruturadas.
+      </p>
+    </section>
+
+    <!-- Experiência -->
+    <section>
+      <div class="section-header">
+        <span class="section-title">Experiência</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="exp-block">
+        <div class="exp-header">
+          <span class="exp-role">Jovem Aprendiz — Infraestrutura / Suporte Técnico</span>
+          <span class="exp-period">Jul 2024 – Jan 2026</span>
+        </div>
+        <div class="exp-company">Magnum Tires · Jaboatão dos Guararapes, PE</div>
+        <!-- ⚠️ EDITE AQUI: substitua os bullets por atividades reais que você fez -->
+        <ul class="exp-bullets">
+          <li>Suporte técnico a usuários internos: instalação de sistemas operacionais, configuração de máquinas e periféricos, e resolução de falhas de hardware e software.</li>
+          <li>Atuação em infraestrutura de rede, incluindo organização e cabeamento estruturado dentro das dependências da empresa.</li>
+          <li>Uso da plataforma GLPI para acompanhamento e gestão de ativos de TI.</li>
+          <li>Apoio à equipe de sistemas em atividades relacionadas ao sistema interno da empresa, com contato direto com ambiente de desenvolvimento e programação.</li>
+        </ul>
+      </div>
+
+      <!-- BLOCO DE EXPERIÊNCIA EXTRA — duplique e preencha quando tiver mais -->
+      <!--
+      <div class="exp-block">
+        <div class="exp-header">
+          <span class="exp-role">Cargo — Função</span>
+          <span class="exp-period">Mês Ano – Mês Ano</span>
+        </div>
+        <div class="exp-company">Empresa · Cidade, UF</div>
+        <ul class="exp-bullets">
+          <li>Atividade 1 com resultado mensurável.</li>
+          <li>Atividade 2 com resultado mensurável.</li>
+        </ul>
+      </div>
+      -->
+
+    </section>
+
+    <!-- Formação -->
+    <section>
+      <div class="section-header">
+        <span class="section-title">Formação Acadêmica</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="edu-block">
+        <div class="edu-header">
+          <span class="edu-course">Tecnólogo em Análise e Desenvolvimento de Sistemas</span>
+          <span class="edu-period">2026 – 2028</span>
+        </div>
+        <div class="edu-institution">ESUDA · Recife, PE</div>
+      </div>
+
+      <div class="edu-block">
+        <div class="edu-header">
+          <span class="edu-course">Técnico em Desenvolvimento de Sistemas</span>
+          <span class="edu-period">2023 – 2025</span>
+        </div>
+        <div class="edu-institution">SESI SENAI · Moreno, PE</div>
+      </div>
+
+    </section>
+
+    <!-- Projetos -->
+    <section>
+      <div class="section-header">
+        <span class="section-title">Projetos</span>
+        <div class="section-line"></div>
+      </div>
+
+      <!-- ⚠️ EDITE AQUI: coloque projetos reais — escolares, pessoais ou da faculdade -->
+      <div class="project-block">
+        <div class="project-name">Sistema de Gerenciamento de Estoque</div>
+        <p class="project-desc">
+          Aplicação web desenvolvida em PHP com autenticação de usuários (login/senha), controle de estoque e interface responsiva. O sistema inclui banco de dados relacional para persistência dos dados e front-end estruturado com Bootstrap.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">Bootstrap</span>
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Autenticação</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
