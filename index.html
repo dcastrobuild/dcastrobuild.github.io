@@ -36,7 +36,7 @@
     grid-template-columns: 220px 1fr;
   }
 
-  
+  /*SIDEBAR*/
   .sidebar {
     background: #060D18;
     padding: 40px 24px;
@@ -162,14 +162,14 @@
     background: var(--line);
   }
 
-
+  /* Resumo */
   .resumo-text {
     font-size: 13px;
     color: var(--mid);
     line-height: 1.7;
   }
 
-
+  /* Experiência */
   .exp-block {
     margin-bottom: 18px;
   }
@@ -233,7 +233,7 @@
     top: 3px;
   }
 
-
+  /* Formação */
   .edu-block {
     margin-bottom: 14px;
   }
@@ -261,7 +261,7 @@
     font-weight: 500;
   }
 
-
+  /* Projetos */
   .project-block {
     margin-bottom: 14px;
   }
@@ -297,7 +297,7 @@
     padding: 1px 7px;
   }
 
-
+  /* Idiomas */
   .lang-item {
     display: flex;
     justify-content: space-between;
@@ -310,18 +310,13 @@
   .lang-item:last-child { border-bottom: none; }
   .lang-level { color: var(--accent); font-weight: 500; }
 
- 
-  @media print {
-    body { background: #070E1A; }
-    .page { margin: 0; box-shadow: none; width: 100%; }
-  }
 </style>
 </head>
 <body>
 
 <div class="page">
 
-
+  <!--SIDEBAR-->
   <aside class="sidebar">
 
     <div>
@@ -329,7 +324,7 @@
       <div class="sidebar-title">Desenvolvedor em Formação<br>Python · JavaScript · Automação</div>
     </div>
 
-
+    <!-- Contato -->
     <div>
       <div class="sidebar-section-label">Contato</div>
       <div class="contact-item">
@@ -354,7 +349,7 @@
       </div>
     </div>
 
-
+    <!-- Habilidades Técnicas -->
     <div>
       <div class="sidebar-section-label">Habilidades Técnicas</div>
       <div class="skills-list">
@@ -368,7 +363,7 @@
       </div>
     </div>
 
-
+    <!-- Soft Skills -->
     <div>
       <div class="sidebar-section-label">Perfil</div>
       <div>
@@ -381,6 +376,7 @@
       </div>
     </div>
 
+    <!-- Idiomas -->
     <div>
       <div class="sidebar-section-label">Idiomas</div>
       <div class="lang-item">
@@ -399,22 +395,22 @@
 
   </aside>
 
-
+  <!-- MAIN -->
   <main class="main">
 
-
+    <!-- Resumo -->
     <section>
       <div class="section-header">
         <span class="section-title">Sobre</span>
         <div class="section-line"></div>
       </div>
-  
+  <!-- Sobre mim -->
       <p class="resumo-text">
         Estudante de Análise e Desenvolvimento de Sistemas com experiência prática em infraestrutura e suporte técnico. Atualmente focado em desenvolvimento com Python e JavaScript, com interesse em automação, inteligência artificial e desenvolvimento web. Atuei como Jovem Aprendiz na Magnum Tires por 18 meses, desenvolvendo raciocínio estruturado e atenção a processos. Busco oportunidade de estágio ou posição júnior para aplicar e expandir minha base técnica em projetos reais.
       </p>
     </section>
 
-    
+    <!-- Experiência -->
     <section>
       <div class="section-header">
         <span class="section-title">Experiência</span>
@@ -427,7 +423,7 @@
           <span class="exp-period">Jul 2024 – Jan 2026</span>
         </div>
         <div class="exp-company">Magnum Tires · Jaboatão dos Guararapes, PE</div>
-  
+        <!-- Experiencias -->
         <ul class="exp-bullets">
           <li>Suporte técnico a usuários internos: instalação de sistemas operacionais, configuração de máquinas e periféricos, e resolução de falhas de hardware e software.</li>
           <li>Atuação em infraestrutura de rede, incluindo organização e cabeamento estruturado dentro das dependências da empresa.</li>
@@ -436,10 +432,9 @@
         </ul>
       </div>
 
-
     </section>
 
-
+    <!-- Formação -->
     <section>
       <div class="section-header">
         <span class="section-title">Formação Acadêmica</span>
@@ -464,22 +459,22 @@
 
       <div class="edu-block">
         <div class="edu-header">
-          <span class="edu-course">Python — Santander Academy</span>
-          <span class="edu-period">2026 – em curso</span>
+          <span class="edu-course">Certificado em Python — Santander Open Academy</span>
+          <span class="edu-period">Mai 2026</span>
         </div>
-        <div class="edu-institution">Santander Open Academy · Online</div>
+        <div class="edu-institution">Santander Open Academy · 8h · 2 Módulos · Concluído</div>
       </div>
 
     </section>
 
-  
+    <!-- Projetos -->
     <section>
       <div class="section-header">
         <span class="section-title">Projetos</span>
         <div class="section-line"></div>
       </div>
 
-      
+      <!-- Projetos -->
       <div class="project-block">
         <div class="project-name">Sistema de Gerenciamento de Estoque</div>
         <p class="project-desc">
